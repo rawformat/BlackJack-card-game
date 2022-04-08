@@ -19,7 +19,7 @@ class Card():
         self.value = values[rank]
 
     def __str__(self) -> str:
-        return f'{self.suit} of {self.rank}'
+        return self.suit + ' of ' + {self.rank}
 
 class Deck():
     def __init__(self) -> None:
@@ -28,8 +28,8 @@ class Deck():
 
         for suit in suits:
             for rank in ranks:
-                created_card = Card(rank, suit)
-                self.all_cards.append(created_card) #Create the Deck of cards with ranks and suits
+                new_card = Card(rank, suit)
+                self.all_cards.append(new_card) #Create the Deck of cards with ranks and suits
 
     def shuffle(self):
         random.shuffle(self.all_cards)
